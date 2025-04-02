@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  WAIT_COMMAND: bash -c 'while true; do echo Hit CTRL+C to stop test container; sleep 300; done'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  build:
+    desc: Build the docker container
+    cmds:
+      - docker build --ssh default -t mjml-server:dev .
+
+  yarn:
+    desc: Update yarn deps
+    cmds:
+      - docker-compose run --rm yarn

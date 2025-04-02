@@ -1,0 +1,8 @@
+app/logs/*.log
+vendor/*
+var/log/*.log
+node_modules/
+.env.*
+public/build/*
+tmp-qa/*
+enveloper/enveloper-data/enveloper.sqlite
